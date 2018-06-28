@@ -10,7 +10,7 @@ testFile="/opt/cisco/anyconnect/bin/vpn" # Cisco VPN binary
 
 if [[ -f "${testFile}" ]] ; then
 	# Cisco AnyConnect installed; read current IP Address
-	RESULT=$(/opt/cisco/anyconnect/bin/vpn stats | grep "Client Address (IPv4):" | awk '{print $4}')
+	RESULT=$( /opt/cisco/anyconnect/bin/vpn stats | /usr/bin/grep "Client Address (IPv4):" | /usr/bin/awk '{print $4}' )
 
 	if [[ "${RESULT}" == "" ]]; then
 		RESULT="No VPN Connection"
